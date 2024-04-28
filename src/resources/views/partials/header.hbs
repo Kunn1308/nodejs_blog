@@ -1,6 +1,6 @@
 <nav class='navbar navbar-expand-lg bg-dark bg-gradient'>
-    <div class='container-fluid'>
-        <a class='navbar-brand text-white' href='#'>F8 Education</a>
+    <div class='container'>
+        <a class='navbar-brand text-white' href='/'>F8 Education</a>
         <button
             class='navbar-toggler text-white'
             type='button'
@@ -13,17 +13,31 @@
             <span class='navbar-toggler-icon'></span>
         </button>
         <div class='collapse navbar-collapse' id='navbarSupportedContent'>
-            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+            <ul class='navbar-nav ms-auto mb-2 mb-lg-0'>
                 <li class='nav-item'>
-                    <a class='nav-link active text-white' aria-current='page' href='/'>Home</a>
-                </li>
-                <li class='nav-item'>
-                    <a class='nav-link text-white' aria-current='page' href='/courses'>Courses</a>
-                </li>
-                <li class='nav-item'>
-                    <a class='nav-link text-white' href='/courses/create'>Link</a>
+                    <a class='nav-link text-white' aria-current='page' href='/courses'>Khóa học</a>
                 </li>
 
+                <li class='nav-item dropdown'>
+                    <a
+                        class='nav-link dropdown-toggle text-white'
+                        href='#'
+                        role='button'
+                        data-bs-toggle='dropdown'
+                        aria-expanded='false'
+                    >
+                        Minh Ngọc
+                    </a>
+                    <ul class='dropdown-menu'>
+                        <li><a class='dropdown-item' href='/courses/create'>Đăng khóa học</a></li>
+                        <li><hr class='dropdown-divider' /></li>
+                        <li><a class='dropdown-item' href='/me/stored/courses'>Khóa học của tôi</a></li>
+                        <li><hr class='dropdown-divider' /></li>
+                        <li><a class='dropdown-item' href='/me/stored/news'>Bài viết của tôi</a></li>
+                        <li><hr class='dropdown-divider' /></li>
+                        <li><a class='dropdown-item' href='#'>Đăng xuất</a></li>
+                    </ul>
+                </li>
             </ul>
 
         </div>
