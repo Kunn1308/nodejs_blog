@@ -26,12 +26,12 @@ class CourseController {
     //[POST] /courses/store
     store(req, res, next) {
         // res.json(req.body);
-        const FormData = req.body;
+        const FormData = { ...req.body };
         FormData.image = `https://i.ytimg.com/vi/${req.body.videoId}/maxresdefault.jpg`;
         const course = new Course(req.body);
         course
             .save()
-            .then(() => res.redirect('/courses'))
+            .then(() => res.redirect('/me/stored/courses'))
             .catch(next);
     }
 
@@ -51,7 +51,21 @@ class CourseController {
 
     //[DELETE] /courses/:id
     delete(req, res, next) {
+        Course.delete({ _id: req.params.id })
+            .then(() => res.redirect('back'))
+            .catch(next);
+    }
+
+    //[DELETE] /courses/:id/force
+    forceDelete(req, res, next) {
         Course.deleteOne({ _id: req.params.id })
+            .then(() => res.redirect('back'))
+            .catch(next);
+    }
+
+    //[PATCH] /courses/:id/restore
+    restore(req, res, next) {
+        Course.restore({ _id: req.params.id })
             .then(() => res.redirect('back'))
             .catch(next);
     }
