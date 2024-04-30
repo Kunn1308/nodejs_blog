@@ -28,7 +28,7 @@ class CourseController {
         // res.json(req.body);
         const FormData = { ...req.body };
         FormData.image = `https://i.ytimg.com/vi/${req.body.videoId}/maxresdefault.jpg`;
-        const course = new Course(req.body);
+        const course = new Course(FormData);
         course
             .save()
             .then(() => res.redirect('/me/stored/courses'))

@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
+const dbUrl = 'mongodb+srv://ngockunn13801:wQdj5SgW6KdVr9VE@f8education.0iminjl.mongodb.net/';
 async function connect() {
     try {
-        await mongoose.connect('mongodb://localhost:27017/f8_education_dev');
+        await mongoose.connect(dbUrl);
 
         console.log('Connect successful');
     } catch (error) {
