@@ -21,14 +21,26 @@
             <button type="submit" class="btn btn-primary btn-sm check-all-submit-btn disabled">Thực hiện</button>
         </div>
     </div>
+
+   
     <table class='table mt-4'>
         <thead>
             <tr>
                 <td></td>
                 <th scope='col'>STT</th>
-                <th scope='col'>Tên khóa học</th>
-                <th scope='col'>Trình độ</th>
-                <th scope='col' colspan='2'>Thời gian tạo</th>
+                <th scope='col'>
+                    Tên khóa học
+                    {{{sortable 'name' _sort}}}
+                </th>
+                <th scope='col'>
+                    Trình độ
+                    {{{sortable 'level' _sort}}}
+                </th>
+                <th scope='col' colspan='2'>
+                    Thời gian tạo
+                    {{{sortable 'createdAt' _sort}}}
+
+                </th>
             </tr>
         </thead>
         <tbody>
