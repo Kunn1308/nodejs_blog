@@ -9,6 +9,8 @@ class MeController {
             courseQuery = courseQuery.sort({
                 [req.query.column]: req.query.type,
             });
+        } else {
+            courseQuery.sort({ _id: 1 });
         }
 
         Promise.all([courseQuery, Course.countDocumentsWithDeleted({ deleted: true })])
